@@ -1,0 +1,259 @@
+# Hivedex Semantic Model for Hex
+# This file defines the data model for Hex's semantic layer
+
+version: 1
+name: hivedex_model
+description: |
+  Semantic model for the Hivedex prediction validation platform.
+  Tracks Reddit signals, news momentum, and prediction accuracy.
+
+# Data Sources
+sources:
+  - name: events_catalog
+    type: csv
+    path: data/events_catalog.csv
+    description: Catalog of 50+ historical events across categories
+
+  - name: validation_results
+    type: csv
+    path: data/validation_results.csv
+    description: Prediction validation results with accuracy metrics
+
+  - name: manual_outcomes
+    type: csv
+    path: data/manual_outcomes.csv
+    description: Manually curated outcome data for non-API events
+
+# Entities
+entities:
+  - name: event
+    source: events_catalog
+    primary_key: event_id
+    description: A historical event that may have been predicted by Reddit
+    columns:
+      - name: event_id
+        type: string
+        description: Unique event identifier
+      - name: event_name
+        type: string
+        description: Human-readable event name
+      - name: category
+        type: string
+        description: Event category (stock, movie, tech, gaming, other)
+      - name: event_date
+        type: date
+        description: Date the event occurred
+      - name: subreddits
+        type: string
+        description: Comma-separated list of relevant subreddits
+      - name: keywords
+        type: string
+        description: Search keywords for this event
+      - name: ticker
+        type: string
+        description: Stock ticker if applicable
+      - name: expected_outcome
+        type: string
+        description: Expected outcome direction
+
+  - name: validation
+    source: validation_results
+    primary_key: event_id
+    description: Prediction validation results
+    columns:
+      - name: event_id
+        type: string
+        description: Links to event entity
+      - name: event_name
+        type: string
+        description: Event name for display
+      - name: category
+        type: string
+        description: Event category
+      - name: event_date
+        type: date
+        description: Event date
+      - name: reddit_posts_count
+        type: integer
+        description: Number of Reddit posts analyzed
+      - name: news_articles_count
+        type: integer
+        description: Number of news articles analyzed
+      - name: reddit_peak_signal
+        type: float
+        description: Peak Reddit signal strength (0-100)
+      - name: gdelt_peak_signal
+        type: float
+        description: Peak GDELT signal strength (0-100)
+      - name: reddit_lead_days
+        type: integer
+        description: Days Reddit peaked before news
+      - name: reddit_beats_news_by
+        type: integer
+        description: Days Reddit led news coverage
+      - name: predicted_direction
+        type: string
+        description: Predicted outcome direction (positive/negative/neutral)
+      - name: actual_outcome
+        type: string
+        description: Actual outcome
+      - name: prediction_correct
+        type: boolean
+        description: Whether prediction was correct
+      - name: confidence
+        type: float
+        description: Model confidence percentage
+
+# Metrics
+metrics:
+  - name: overall_accuracy
+    description: Overall prediction accuracy percentage
+    expression: AVG(CASE WHEN prediction_correct THEN 1 ELSE 0 END) * 100
+    entity: validation
+
+  - name: category_accuracy
+    description: Accuracy by category
+    expression: AVG(CASE WHEN prediction_correct THEN 1 ELSE 0 END) * 100
+    entity: validation
+    dimensions:
+      - category
+
+  - name: avg_lead_time
+    description: Average days Reddit leads news
+    expression: AVG(reddit_lead_days)
+    entity: validation
+
+  - name: avg_confidence
+    description: Average model confidence
+    expression: AVG(confidence)
+    entity: validation
+
+  - name: total_events
+    description: Total number of events analyzed
+    expression: COUNT(DISTINCT event_id)
+    entity: validation
+
+  - name: correct_predictions
+    description: Number of correct predictions
+    expression: SUM(CASE WHEN prediction_correct THEN 1 ELSE 0 END)
+    entity: validation
+
+# Dimensions
+dimensions:
+  - name: category
+    description: Event category for grouping
+    entity: validation
+    column: category
+    values:
+      - stock
+      - movie
+      - tech
+      - gaming
+      - other
+
+  - name: prediction_result
+    description: Whether prediction was correct
+    entity: validation
+    column: prediction_correct
+
+  - name: time_period
+    description: Time-based grouping
+    entity: validation
+    column: event_date
+    granularities:
+      - day
+      - week
+      - month
+      - year
+
+# Relationships
+relationships:
+  - name: event_to_validation
+    from_entity: event
+    to_entity: validation
+    type: one_to_one
+    join_column: event_id
+
+# Pre-defined Questions (for Hex AI)
+questions:
+  - question: What is the overall prediction accuracy?
+    answer_template: |
+      The overall prediction accuracy is {{overall_accuracy}}% based on {{total_events}} events.
+
+  - question: Which category has the highest accuracy?
+    answer_template: |
+      {{#each category_accuracy}}
+      {{category}}: {{accuracy}}%
+      {{/each}}
+
+  - question: How early does Reddit predict events?
+    answer_template: |
+      On average, Reddit signals peak {{avg_lead_time}} days before events.
+
+  - question: Show me the most confident predictions
+    visualization: table
+    columns:
+      - event_name
+      - category
+      - confidence
+      - prediction_correct
+    order_by: confidence DESC
+    limit: 10
+
+  - question: Compare accuracy across categories
+    visualization: bar_chart
+    x_axis: category
+    y_axis: category_accuracy
+    color: category
+
+# Dashboard Layouts
+dashboards:
+  - name: main_dashboard
+    title: Hivedex - Prediction Validation Dashboard
+    sections:
+      - name: key_metrics
+        layout: row
+        components:
+          - type: metric
+            metric: overall_accuracy
+            title: Overall Accuracy
+            format: percentage
+          - type: metric
+            metric: total_events
+            title: Events Analyzed
+          - type: metric
+            metric: avg_lead_time
+            title: Avg Lead Time
+            suffix: days
+          - type: metric
+            metric: avg_confidence
+            title: Avg Confidence
+            format: percentage
+
+      - name: category_breakdown
+        layout: column
+        components:
+          - type: bar_chart
+            title: Accuracy by Category
+            metric: category_accuracy
+            dimension: category
+          - type: box_plot
+            title: Lead Time Distribution
+            y_axis: reddit_lead_days
+            group_by: category
+
+      - name: recent_predictions
+        layout: full_width
+        components:
+          - type: table
+            title: Recent Predictions
+            columns:
+              - event_name
+              - category
+              - predicted_direction
+              - actual_outcome
+              - prediction_correct
+              - reddit_lead_days
+              - confidence
+            order_by: event_date DESC
+            limit: 15

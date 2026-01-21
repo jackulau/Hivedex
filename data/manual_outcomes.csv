@@ -1,0 +1,43 @@
+event_id,outcome,outcome_details,source
+# Technology Events
+tech_001,positive,"ChatGPT reached 100M users in 2 months, fastest growing app ever",wikipedia
+tech_002,negative,"Bard demo had factual error, stock dropped 8%",news
+tech_003,negative,"Threads lost 80% of daily users within a month",meta_earnings
+tech_004,negative,"X rebrand was controversial, advertisers left",news
+tech_005,positive,"Claude 3 Opus matched GPT-4 on benchmarks",anthropic
+tech_006,negative,"Rabbit R1 revealed to be mostly an Android app wrapper",teardown
+tech_007,negative,"Humane AI Pin received 2/10 reviews from major outlets",reviews
+tech_008,positive,"Quest 3 received positive reviews, outsold Quest 2 launch",meta_earnings
+tech_009,positive,"GitHub Copilot reached 1.3M paid subscribers",github
+tech_010,positive,"GPT-4 Turbo announced with 128k context, custom GPTs launched",openai
+
+# Gaming Events
+game_001,positive,"Baldur's Gate 3 won Game of the Year, 10M+ copies sold",steam
+game_002,neutral,"Starfield received 83 on Metacritic, mixed user reviews",metacritic
+game_003,positive,"Phantom Liberty received 89 on Metacritic, redeemed the game",metacritic
+game_004,positive,"Hogwarts Legacy sold 22M copies, best-selling game of 2023",wb_games
+game_005,negative,"Diablo 4 player count dropped 65% within 2 months",steam_charts
+game_006,positive,"Palworld hit 2M concurrent players on Steam, fastest growing game",steam
+game_007,positive,"Helldivers 2 hit 450k concurrent players, exceeded expectations",steam
+game_008,negative,"Suicide Squad sold under 500k copies, considered major flop",sales_data
+game_009,neutral,"FF16 sold 3M in first week but below expectations for franchise",square_enix
+game_010,positive,"Tears of the Kingdom sold 10M in 3 days, fastest-selling Zelda",nintendo
+
+# Other Events
+other_001,trump_win,"Trump won 2024 election with 312 electoral votes",ap_news
+other_002,positive,"Sam Altman returned as CEO within 5 days after being fired",openai
+other_003,positive,"Eras Tour became highest-grossing tour ever at $2B+",billboard
+other_004,positive,"Ozempic/GLP-1 drugs became cultural phenomenon, $20B+ market",pharma
+other_005,positive,"WGA strike ended after 148 days with favorable terms for writers",wga
+
+# Movie Box Office (for events without TMDB data)
+movie_001,positive,"Barbie grossed $1.44B worldwide, highest-grossing 2023 film",boxofficemojo
+movie_002,positive,"Oppenheimer grossed $952M, highest-grossing R-rated biopic ever",boxofficemojo
+movie_003,negative,"The Marvels grossed $206M on $220M budget, MCU lowest",boxofficemojo
+movie_004,positive,"Dune Part Two grossed $711M on $190M budget",boxofficemojo
+movie_005,negative,"Madame Web grossed $100M on $80M budget, critical failure",boxofficemojo
+movie_006,positive,"Wonka grossed $634M on $125M budget",boxofficemojo
+movie_007,negative,"Indiana Jones 5 grossed $384M on $300M budget, underperformed",boxofficemojo
+movie_008,positive,"Spider-Verse 2 grossed $690M, critically acclaimed",boxofficemojo
+movie_009,positive,"Godzilla x Kong grossed $570M on $135M budget",boxofficemojo
+movie_010,negative,"The Fall Guy grossed $181M on $130M budget, underperformed",boxofficemojo

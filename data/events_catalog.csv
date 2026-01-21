@@ -1,0 +1,67 @@
+event_id,event_name,category,event_date,subreddits,keywords,ticker,outcome_source,expected_outcome,description
+# STOCKS (15 events)
+stock_001,NVIDIA Q3 2024 Earnings Beat,stock,2024-11-20,"wallstreetbets,stocks,investing,nvidia","NVDA,nvidia,earnings,AI chips,data center",NVDA,yfinance,positive,NVIDIA exceeded earnings expectations driven by AI demand
+stock_002,Tesla Q4 2023 Delivery Miss,stock,2024-01-02,"wallstreetbets,teslainvestorsclub,stocks","TSLA,tesla,deliveries,EV,cybertruck",TSLA,yfinance,negative,Tesla missed Q4 delivery targets
+stock_003,GameStop Meme Revival 2024,stock,2024-05-13,"wallstreetbets,superstonk,stocks","GME,gamestop,roaring kitty,DFV,squeeze",GME,yfinance,positive,Roaring Kitty returned sparking another rally
+stock_004,Silicon Valley Bank Collapse,stock,2023-03-10,"wallstreetbets,finance,stocks,banking","SVB,silicon valley bank,bank run,collapse",SIVB,yfinance,negative,SVB collapsed after bank run
+stock_005,Microsoft OpenAI Partnership,stock,2023-01-23,"wallstreetbets,stocks,technology","MSFT,microsoft,openai,chatgpt,AI",MSFT,yfinance,positive,Microsoft invested $10B in OpenAI
+stock_006,AMD Data Center Growth,stock,2024-07-30,"wallstreetbets,AMD_Stock,stocks","AMD,advanced micro devices,data center,AI,MI300",AMD,yfinance,positive,AMD beat expectations on AI chip demand
+stock_007,Meta Layoffs Recovery,stock,2023-03-14,"wallstreetbets,stocks,technology","META,facebook,meta,layoffs,year of efficiency",META,yfinance,positive,Meta recovered after efficiency year
+stock_008,Netflix Password Crackdown,stock,2023-07-19,"wallstreetbets,stocks,technology","NFLX,netflix,password sharing,subscribers",NFLX,yfinance,positive,Password sharing crackdown boosted subscribers
+stock_009,Disney+ Subscriber Miss,stock,2024-02-07,"wallstreetbets,stocks,disney","DIS,disney,disney+,streaming,subscribers",DIS,yfinance,negative,Disney+ lost subscribers
+stock_010,Apple Vision Pro Launch,stock,2024-02-02,"wallstreetbets,apple,technology","AAPL,apple,vision pro,AR,VR,headset",AAPL,yfinance,neutral,Vision Pro launched with mixed reception
+stock_011,Reddit IPO,stock,2024-03-21,"wallstreetbets,stocks,technology","RDDT,reddit,IPO,public",RDDT,yfinance,positive,Reddit IPO exceeded expectations
+stock_012,Unity Pricing Controversy,stock,2023-09-12,"wallstreetbets,stocks,gamedev","U,unity,runtime fee,pricing,controversy",U,yfinance,negative,Unity stock crashed after pricing backlash
+stock_013,Palantir Government Contracts,stock,2024-08-05,"wallstreetbets,stocks,technology","PLTR,palantir,government,AI,contracts",PLTR,yfinance,positive,Palantir won major government contracts
+stock_014,Boeing 737 MAX Issues,stock,2024-01-05,"wallstreetbets,stocks,aviation","BA,boeing,737 max,door plug,safety",BA,yfinance,negative,737 MAX door plug incident
+stock_015,Coinbase Regulatory Issues,stock,2023-06-06,"wallstreetbets,cryptocurrency,stocks","COIN,coinbase,SEC,regulation,lawsuit",COIN,yfinance,negative,SEC sued Coinbase
+
+# MOVIES (10 events)
+movie_001,Barbie Blockbuster,movie,2023-07-21,"movies,boxoffice,entertainment","barbie,greta gerwig,margot robbie,ryan gosling",,tmdb,positive,Barbie exceeded all box office expectations
+movie_002,Oppenheimer Success,movie,2023-07-21,"movies,boxoffice,christophernolan","oppenheimer,nolan,cillian murphy,atomic bomb",,tmdb,positive,Oppenheimer became highest grossing R-rated film
+movie_003,The Marvels Underperformance,movie,2023-11-10,"movies,marvelstudios,boxoffice","marvels,captain marvel,ms marvel,photon,MCU",,tmdb,negative,The Marvels was MCUs lowest grossing film
+movie_004,Dune Part Two Success,movie,2024-03-01,"movies,dune,boxoffice","dune 2,dune part two,denis villeneuve,timothee chalamet",,tmdb,positive,Dune Part Two exceeded expectations
+movie_005,Madame Web Flop,movie,2024-02-14,"movies,boxoffice,marvelstudios","madame web,sony,spider-man,dakota johnson",,tmdb,negative,Madame Web was critically panned
+movie_006,Wonka Surprise Hit,movie,2023-12-15,"movies,boxoffice","wonka,timothee chalamet,willy wonka,chocolate factory",,tmdb,positive,Wonka exceeded expectations
+movie_007,Indiana Jones 5 Disappointment,movie,2023-06-30,"movies,boxoffice","indiana jones,dial of destiny,harrison ford",,tmdb,negative,Dial of Destiny underperformed
+movie_008,Spider-Verse 2 Success,movie,2023-06-02,"movies,boxoffice,spiderman","spider-verse,across the spider-verse,miles morales",,tmdb,positive,Across the Spider-Verse was critically acclaimed
+movie_009,Godzilla x Kong Success,movie,2024-03-29,"movies,boxoffice,godzilla","godzilla,kong,monsterverse,titan",,tmdb,positive,Godzilla x Kong exceeded expectations
+movie_010,The Fall Guy Underperformance,movie,2024-05-03,"movies,boxoffice","fall guy,ryan gosling,emily blunt,stuntman",,tmdb,negative,The Fall Guy underperformed at box office
+
+# TECHNOLOGY (10 events)
+tech_001,ChatGPT Launch Virality,tech,2022-11-30,"technology,artificial,openai","chatgpt,openai,AI,GPT,language model",,manual,positive,ChatGPT became fastest growing app ever
+tech_002,Google Bard/Gemini Launch,tech,2023-02-06,"technology,google,artificial","bard,gemini,google AI,chatgpt competitor",,manual,negative,Bard launch was seen as rushed
+tech_003,Threads Launch and Decline,tech,2023-07-05,"technology,instagram,twitter","threads,instagram,twitter killer,meta",,manual,negative,Threads lost 80% of users after launch
+tech_004,Twitter/X Rebrand,tech,2023-07-23,"technology,twitter,elonmusk","twitter,X,rebrand,elon musk",,manual,negative,X rebrand was controversial
+tech_005,Claude 3 Launch,tech,2024-03-04,"technology,artificial,anthropic","claude,claude 3,anthropic,AI,opus",,manual,positive,Claude 3 matched GPT-4 capabilities
+tech_006,Rabbit R1 Controversy,tech,2024-04-23,"technology,gadgets,artificial","rabbit r1,AI device,jesse lyu",,manual,negative,Rabbit R1 was revealed to be mostly an Android app
+tech_007,Humane AI Pin Failure,tech,2024-04-11,"technology,gadgets,artificial","humane,AI pin,wearable,projection",,manual,negative,Humane AI Pin received terrible reviews
+tech_008,Meta Quest 3 Launch,tech,2023-10-10,"technology,virtualreality,oculus","quest 3,meta quest,VR,mixed reality",,manual,positive,Quest 3 was well received
+tech_009,GitHub Copilot Adoption,tech,2023-06-15,"programming,technology,github","copilot,github copilot,AI coding,code completion",,manual,positive,Copilot reached 1M paid subscribers
+tech_010,OpenAI DevDay GPT-4 Turbo,tech,2023-11-06,"technology,openai,artificial","devday,gpt-4 turbo,openai,GPTs,custom GPT",,manual,positive,GPT-4 Turbo and GPTs announced
+
+# GAMING (10 events)
+game_001,Baldurs Gate 3 Phenomenon,gaming,2023-08-03,"games,baldursgate3,pcgaming","baldurs gate 3,BG3,larian,CRPG,GOTY",,manual,positive,BG3 became game of the year
+game_002,Starfield Mixed Reception,gaming,2023-09-06,"games,starfield,xbox","starfield,bethesda,xbox,space RPG",,manual,neutral,Starfield received mixed reviews
+game_003,Cyberpunk 2077 Redemption,gaming,2023-09-26,"games,cyberpunkgame,pcgaming","cyberpunk 2077,phantom liberty,CD projekt,redemption",,manual,positive,Phantom Liberty restored the games reputation
+game_004,Hogwarts Legacy Success,gaming,2023-02-10,"games,harrypotter,pcgaming","hogwarts legacy,harry potter,wizarding world",,manual,positive,Hogwarts Legacy broke sales records
+game_005,Diablo 4 Launch and Decline,gaming,2023-06-06,"games,diablo,pcgaming","diablo 4,blizzard,ARPG,seasons",,manual,negative,Diablo 4 player count dropped after launch
+game_006,Palworld Viral Success,gaming,2024-01-19,"games,palworld,pcgaming","palworld,pokemon with guns,pocketpair,survival",,manual,positive,Palworld broke Steam records
+game_007,Helldivers 2 Surprise Hit,gaming,2024-02-08,"games,helldivers2,pcgaming","helldivers 2,arrowhead,coop,democracy",,manual,positive,Helldivers 2 exceeded all expectations
+game_008,Suicide Squad KTJL Flop,gaming,2024-02-02,"games,suicidesquadgame,dccomics","suicide squad,kill the justice league,rocksteady",,manual,negative,Suicide Squad was a major disappointment
+game_009,Final Fantasy XVI Performance,gaming,2023-06-22,"games,finalfantasy,JRPG","FF16,final fantasy 16,square enix,clive",,manual,neutral,FF16 received good reviews but sales were slow
+game_010,Zelda TOTK Success,gaming,2023-05-12,"games,zelda,nintendo","zelda,tears of the kingdom,TOTK,nintendo,link",,manual,positive,Tears of the Kingdom was a massive success
+
+# OTHER (5 events)
+other_001,2024 US Presidential Election,politics,2024-11-05,"politics,news,elections","election,trump,harris,president,vote",,manual,trump_win,Trump won the 2024 election
+other_002,Sam Altman OpenAI Drama,tech,2023-11-17,"technology,openai,artificial","sam altman,fired,openai board,microsoft",,manual,positive,Sam Altman was briefly fired then returned
+other_003,Taylor Swift Eras Tour,entertainment,2023-03-17,"taylorswift,music,entertainment","eras tour,taylor swift,concert,economy",,manual,positive,Eras Tour became highest grossing tour ever
+other_004,Ozempic Trend,health,2023-06-01,"loseit,health,medicine","ozempic,wegovy,semaglutide,weight loss,GLP-1",,manual,positive,Ozempic became cultural phenomenon
+other_005,Writers Strike Resolution,entertainment,2023-09-27,"entertainment,television,movies","WGA,writers strike,SAG-AFTRA,hollywood",,manual,positive,Writers strike ended after 148 days
+
+# ADDITIONAL EVENTS (5 more)
+stock_016,Arm Holdings IPO Success,stock,2023-09-14,"wallstreetbets,stocks,technology","ARM,arm holdings,IPO,softbank,chips",ARM,yfinance,positive,Arm IPO was the biggest of 2023
+movie_011,Killers of the Flower Moon,movie,2023-10-20,"movies,boxoffice,scorsese","killers flower moon,scorsese,dicaprio,deniro,osage",,tmdb,positive,Critical acclaim but mixed box office
+tech_011,Apple Journal App Launch,tech,2023-12-11,"apple,technology,ios","journal,apple journal,ios 17,diary app",,manual,neutral,Apple launched Journal app with iOS 17.2
+game_011,Alan Wake 2 Critical Success,gaming,2023-10-27,"games,alanwake,pcgaming","alan wake 2,remedy,survival horror",,manual,positive,Alan Wake 2 was critically acclaimed
+other_006,Bitcoin ETF Approval,crypto,2024-01-10,"cryptocurrency,bitcoin,investing","bitcoin ETF,spot ETF,SEC approval,blackrock",,manual,positive,SEC approved spot Bitcoin ETFs
